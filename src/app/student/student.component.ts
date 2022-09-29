@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup,FormBuilder,Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-student',
@@ -7,9 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudentComponent implements OnInit {
 
-  constructor() { }
+  showadd!:boolean;
+  showupdate!:boolean;
+  formValue!:FormGroup;
+  constructor(private formBuilder:FormBuilder) { }
 
   ngOnInit(): void {
+    this.formValue = this.formBuilder.group({
+      name:['',Validators.required],
+      email:['',Validators.required],
+      mobile:['',Validators.required],
+      city:['',Validators.required]
+    })
+  }
+
+  add(){
+    this.showadd = true;
+    this.showupdate = false;
+  }
+  update(){
+    this.showadd = false;
+    this.showupdate = true;
   }
 
 }
