@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <h2 class="text-light primary py-3">Student Management System</h2>
         <div class="d-flex">
-            <button class="btn btn-success" (click)="add()" data-bs-toggle="modal" data-bs-target="#exampleModal">Add student</button>&nbsp;
+            <button class="btn btn-success" (click)="add()" data-bs-toggle="modal" data-bs-target="#exampleModal" >Add student</button>&nbsp;
             <button class="btn btn-warning">Logout</button>
         </div>
     </div>
@@ -11,24 +11,25 @@
 <table class="table mt-4" >
     <thead>
         <tr>
-            <th scope="col" >S.Id</th>
-            <th scope="col" >Name</th>
-            <th scope="col" >Email</th>
-            <th scope="col" >Mobile</th>
-            <th scope="col" >City</th>
+            <th scope="col" > Id </th>
+            <th scope="col" > Name </th>
+            <th scope="col" > Email </th>
+            <th scope="col" > mobile </th>
+            <th scope="col" > City </th>
             <th scope="col" >Action</th>
         </tr>
     </thead>
     <tbody>
-        <td>1</td>
-        <td>vumisa</td>
-        <td>vcemm24@gmail.com</td>
-        <td>0815140058</td>
-        <td>prone</td>
+    <tr *ngFor="let data of allstudentdata " >
+        <td>{{ data.id }}</td>
+        <td>{{ data.name }}</td>
+        <td>{{ data.email }}</td>
+        <td>{{ data.mobile }}</td>
+        <td>{{ data.city }}</td>
         <td>
-        <button class="alert alert-info" (click)="update()" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>&nbsp;
-        <button class="alert alert-danger">Delete</button></td>
-        
+        <button class="alert alert-info" (click)="edit(data)" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>&nbsp;
+        <button class="alert alert-danger" (click)="deletestud(data)" >Delete</button></td>
+    </tr>
     </tbody>
 </table>
 
@@ -82,8 +83,8 @@
         </div>
         <div class="modal-footer"  style="background:blue ;">
           <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Close</button>
-          <button *ngIf="showadd" type="button" class="btn btn-success">Add</button>
-          <button *ngIf="showupdate" type="button" class="btn btn-success">Update</button>
+          <button *ngIf="showadd" type="button" class="btn btn-success" (click)="addstudent()" [disabled]="formValue.invalid" >Add</button>
+          <button *ngIf="showupdate" type="button" class="btn btn-success" (click)="update()" [disabled]="formValue.invalid">Update</button>
         </div>
       </div>
     </div>

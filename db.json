@@ -1,0 +1,29 @@
+{
+  "posts": [
+    {
+      "id": 2,
+      "name": "vcemm",
+      "email": "vcemm@gmail.com",
+      "mobile": "089",
+      "city": "kinshasa"
+    },
+    {
+      "id": 3,
+      "name": "bamsk",
+      "email": "bamsk@gmail.com",
+      "mobile": "08975258965",
+      "city": "matadi"
+    },
+    {
+      "id": 4,
+      "name": "meso",
+      "email": "meso@gmail.com",
+      "mobile": "8484",
+      "city": "boma"
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
