@@ -22,6 +22,15 @@
       "city": "boma"
     }
   ],
+  "signup": [
+    {
+      "name": "vcemm",
+      "email": "vcemm@gmail.com",
+      "mobile": "089",
+      "password": "123456",
+      "id": 1
+    }
+  ],
   "comments": [],
   "profile": {
     "name": "typicode"
